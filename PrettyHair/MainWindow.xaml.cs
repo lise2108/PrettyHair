@@ -27,7 +27,9 @@ namespace PrettyHair
 
 		private void OpretKunde_Click(object sender, RoutedEventArgs e)
 		{
+			PrettyHair.OpretKunde opretKunde = new OpretKunde();
 
+			opretKunde.Show();
 		}
 	}
 }
