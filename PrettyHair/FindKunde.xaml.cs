@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PrettyHair
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-
-		private void OpretKunde_Click(object sender, RoutedEventArgs e)
+	/// <summary>
+	/// Interaction logic for FindKunde.xaml
+	/// </summary>
+	public partial class FindKunde : Window
+	{
+		public FindKunde()
 		{
-
+			InitializeComponent();
 		}
 	}
 }
