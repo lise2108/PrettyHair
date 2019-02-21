@@ -26,23 +26,38 @@ namespace PrettyHair
 
 		private void OpretKundeOK_Click(object sender, RoutedEventArgs e)
 		{
+			 
 
 		}
 
 		private void NavnText_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			if ((NavnText.Text != null))
-			{
-				OpretKundeOK.IsEnabled = true;
-			}
-			else
-			{
-				OpretKundeOK.IsEnabled = false;
-			}
+			CheckOK(e);
+
 		}
 
 		private void AdresseText_TextChanged(object sender, TextChangedEventArgs e)
 		{
+
+			CheckOK(e);
+
+		}
+
+		private void CheckOK(TextChangedEventArgs e)
+		{
+
+
+
+
+			if (e == null)
+			{
+				OpretKundeOK.IsEnabled = false;
+			}
+			else
+			{
+				OpretKundeOK.IsEnabled = true;
+			}
+
 
 		}
 
