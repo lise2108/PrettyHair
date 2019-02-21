@@ -9,6 +9,10 @@
     <Grid>
         <Button Name="OpretKunde" FontSize="20" Content="Opret Kunde" HorizontalAlignment="Left" Margin="216,94,0,0" VerticalAlignment="Top" Width="333" Height="37" Click="OpretKunde_Click"/>
         <Label Name="FindKunde" FontSize="20" Content="Find Kunde" HorizontalAlignment="Left" Margin="73,268,0,0" VerticalAlignment="Top" Height="42" Width="136"/>
+        <TextBox Name="FindKundeText" HorizontalAlignment="Left" Height="27" Margin="216,275,0,0" TextWrapping="Wrap" Text="Indtast kunde id" VerticalAlignment="Top" Width="120"/>
+       
+
+
 
     </Grid>
 </Window>
