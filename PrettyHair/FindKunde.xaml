@@ -11,9 +11,9 @@
         <Label Name="OrdreDato" Content="Ordre dato" HorizontalAlignment="Left" Margin="90,175,0,0" VerticalAlignment="Top"/>
         <Label Name="Leveringsdato" Content="Leveringsdato" HorizontalAlignment="Left" Margin="90,258,0,0" VerticalAlignment="Top"/>
         <Label Name="Picked" Content="Picked" HorizontalAlignment="Left" Margin="90,340,0,0" VerticalAlignment="Top"/>
-        <TextBox IsEnabled="False" Name="OrdreDatoText" HorizontalAlignment="Left" Height="23" Margin="325,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox IsEnabled="False" Name="LeveringsdatoText" HorizontalAlignment="Left" Height="23" Margin="325,258,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox IsEnabled="False" Name="PickedText" HorizontalAlignment="Left" Height="23" Margin="325,340,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox IsEnabled="False" Name="OrdreDatoText" HorizontalAlignment="Left" Height="23" Margin="325,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox IsEnabled="False" Name="LeveringsdatoText" HorizontalAlignment="Left" Height="23" Margin="325,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox IsEnabled="False" Name="PickedText" HorizontalAlignment="Left" Height="23" Margin="325,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
