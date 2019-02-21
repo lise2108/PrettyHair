@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace PrettyHair
 {
     /// <summary>
-    /// Interaction logic for OpretKunde.xaml
+    /// Interaction logic for OpretOrdre.xaml
     /// </summary>
-    public partial class OpretKunde : Window
+    public partial class OpretOrdre : Window
     {
-
-        PrettyHair.Controller cont = new PrettyHair.Controller();
-        public OpretKunde()
+        public OpretOrdre()
         {
             InitializeComponent();
-        }
-
-        private void OpretKundeOK_Click(object sender, RoutedEventArgs e)
-        {
-            cont.CreateCustomer(NavnText.Text, AdresseText.Text, Convert.ToInt32(ZipText.Text), ByText.Text, TlfText.Text);
         }
     }
 }

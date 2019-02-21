@@ -68,6 +68,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="DBController.cs" />
     <Compile Include="FindKunde.xaml.cs">
       <DependentUpon>FindKunde.xaml</DependentUpon>
@@ -80,10 +81,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OpretOrdre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OpretKunde.xaml.cs">
       <DependentUpon>OpretKunde.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OpretOrdre.xaml.cs">
+      <DependentUpon>OpretOrdre.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

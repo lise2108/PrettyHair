@@ -10,5 +10,12 @@ namespace PrettyHair
     {
         DBController Dbcontroller = new DBController();
         private bool spWorked;
+
+        public void CreateCustomer(string name, string address, int zip, string town, string telephone)
+        {
+            Customer customer = new Customer { Name = name, Address = address, Zip = zip, Town = town, Telephone = telephone };
+            Dbcontroller.CreateCustomer(customer);
+        }
+
     }
 }

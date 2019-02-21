@@ -2,13 +2,44 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace PrettyHair
 {
-    class DBController
+    public class DBController
     {
-        private static string connectionString =
+        private static string connectionString = 
         "Server = ealSQL1.eal.local; Database = A_DB29_2018; User Id = A_STUDENT29; Password = A_OPENDB29;";
+        private bool spWorked;
+        public void CreateCustomer(Customer customer)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("AddCustomer", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new SqlParameter("@Name", customer.Name));
+                    cmd.Parameters.Add(new SqlParameter("@Address", customer.Address));
+                    cmd.Parameters.Add(new SqlParameter("@Zip", customer.Zip));
+                    cmd.Parameters.Add(new SqlParameter("@Town", customer.Town));
+                    cmd.Parameters.Add(new SqlParameter("@Telephone", customer.Telephone));
+
+                    cmd.ExecuteNonQuery();
+                    spWorked = true;
+                }
+                catch (SqlException e)
+                {
+                    spWorked = false;
+                    Console.WriteLine("Woopsi " + e.Message);
+                }
+            }
+
+            
+        }
     }
 }

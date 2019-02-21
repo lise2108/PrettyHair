@@ -27,9 +27,26 @@ namespace PrettyHair
 
 		private void OpretKunde_Click(object sender, RoutedEventArgs e)
 		{
-			PrettyHair.OpretKunde opretKunde = new OpretKunde();
+			OpretKunde opretKunde = new OpretKunde();
 
 			opretKunde.Show();
-		}
-	}
+            this.Close();
+        }
+
+        private void FindKunde_Click(object sender, RoutedEventArgs e)
+        {
+
+            FindKunde findKunde = new FindKunde();
+            findKunde.Show();
+            this.Close();
+        }
+
+        private void OpretOrdre_Click(object sender, RoutedEventArgs e)
+        {
+            OpretOrdre opretOrdre = new OpretOrdre();
+
+            opretOrdre.Show();
+            this.Close();
+        }
+    }
 }
