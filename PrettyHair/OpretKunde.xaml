@@ -12,11 +12,11 @@
         <Label Name="Zip" FontSize="15" Content="Zip" HorizontalAlignment="Left" Margin="47,196,0,0" VerticalAlignment="Top"/>
         <Label Name="By" FontSize="15" Content="By" HorizontalAlignment="Left" Margin="47,277,0,0" VerticalAlignment="Top"/>
         <Label Name="Tlf" FontSize="15" Content="Tlf" HorizontalAlignment="Left" Margin="47,356,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="NavnText" HorizontalAlignment="Left" Height="23" Margin="213,50,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="AdresseText" HorizontalAlignment="Left" Height="23" Margin="213,117,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ZipText" HorizontalAlignment="Left" Height="23" Margin="213,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ByText" HorizontalAlignment="Left" Height="23" Margin="213,277,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TlfText" HorizontalAlignment="Left" Height="23" Margin="213,356,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="NavnText" HorizontalAlignment="Left" Height="23" Margin="213,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="AdresseText" HorizontalAlignment="Left" Height="23" Margin="213,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ZipText" HorizontalAlignment="Left" Height="23" Margin="213,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="ByText" HorizontalAlignment="Left" Height="23" Margin="213,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="TlfText" HorizontalAlignment="Left" Height="23" Margin="213,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button Name="OpretKundeOK" Content="OK" HorizontalAlignment="Left" Margin="590,356,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
