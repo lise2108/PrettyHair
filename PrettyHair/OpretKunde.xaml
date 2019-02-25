@@ -1,23 +1,40 @@
 ﻿<Window x:Class="PrettyHair.OpretKunde"
+
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrettyHair"
-        mc:Ignorable="d"
-        Title="OpretKunde" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Foreground="White" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Height="450" Width="400" FocusManager.FocusedElement="{Binding ElementName=NavnText}">
     <Grid>
-        <Label Name="Navn" FontSize="15" Content="Navn" HorizontalAlignment="Left" Margin="47,50,0,0" VerticalAlignment="Top"/>
-        <Label Name="Adresse" FontSize="15" Content="Adresse" HorizontalAlignment="Left" Margin="47,117,0,0" VerticalAlignment="Top"/>
-        <Label Name="Zip" FontSize="15" Content="Zip" HorizontalAlignment="Left" Margin="47,196,0,0" VerticalAlignment="Top"/>
-        <Label Name="By" FontSize="15" Content="By" HorizontalAlignment="Left" Margin="47,277,0,0" VerticalAlignment="Top"/>
-        <Label Name="Tlf" FontSize="15" Content="Tlf" HorizontalAlignment="Left" Margin="47,356,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="NavnText" HorizontalAlignment="Left" Height="23" Margin="213,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="AdresseText" HorizontalAlignment="Left" Height="23" Margin="213,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-        <TextBox Name="ZipText" HorizontalAlignment="Left" Height="23" Margin="213,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="ByText" HorizontalAlignment="Left" Height="23" Margin="213,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="TlfText" HorizontalAlignment="Left" Height="23" Margin="213,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button IsEnabled="false" Name="OpretKundeOK" Content="OK" HorizontalAlignment="Left" Margin="590,356,0,0" VerticalAlignment="Top" Width="75" Click="OpretKundeOK_Click"/>
+
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Pretty Hair - Ordresystem</TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
+                    <StackPanel Width="150">
+                        <Button Content="Tilbage til menu" Click="GoBack_Click"/>
+                        <Separator/>
+                        <Button Content="Afslut PrettyHair" Click="Shutdown_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </Grid>
+
+        <Label Name="Navn" FontSize="15" Content="Navn:" HorizontalAlignment="Left" Margin="47,89,0,0" VerticalAlignment="Top"/>
+        <Label Name="Adresse" FontSize="15" Content="Adresse:" HorizontalAlignment="Left" Margin="47,155,0,0" VerticalAlignment="Top"/>
+        <Label Name="Zip" FontSize="15" Content="Postnummer:" HorizontalAlignment="Left" Margin="47,220,0,0" VerticalAlignment="Top"/>
+        <Label Name="By" FontSize="15" Content="By:" HorizontalAlignment="Left" Margin="47,277,0,0" VerticalAlignment="Top"/>
+        <Label Name="Tlf" FontSize="15" Content="Telefon:" HorizontalAlignment="Left" Margin="47,356,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="NavnText" Foreground="Black" Background="#FFE8E8E8" HorizontalAlignment="Left" Height="23" Margin="213,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="NavnText_TextChanged" />
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="AdresseText" Foreground="Black" Background="#FFE8E8E8" HorizontalAlignment="Left" Height="23" Margin="213,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="AdresseText_TextChanged" />
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="ZipText" Foreground="Black" Background="#FFE8E8E8" MaxLength="4"  PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="23" Margin="213,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ZipText_TextChanged"/>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="ByText" Foreground="Black" Background="#FFE8E8E8" HorizontalAlignment="Left" Height="23" Margin="213,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ByText_TextChanged"/>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="TlfText" Foreground="Black" Background="#FFE8E8E8" MaxLength="8" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="23" Margin="213,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TlfText_TextChanged"/>
+        <Button IsEnabled="false" Name="OpretKundeOK" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Content="Opret" HorizontalAlignment="Left" Margin="47,408,0,0" VerticalAlignment="Top" Width="286" Click="OpretKundeOK_Click"/>
 
     </Grid>
 </Window>

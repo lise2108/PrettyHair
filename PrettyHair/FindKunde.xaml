@@ -4,16 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrettyHair"
-        mc:Ignorable="d"
-        Title="FindKunde" Height="450" Width="800">
-    <Grid>
-        <Button Name="KundeSøgBTN" Content="Søg efter kunde" HorizontalAlignment="Left" Margin="590,71,0,0" VerticalAlignment="Top" Width="117" Height="34" Click="KundeSøgBTN_Click"/>
-        <Label Name="KundeIDlbl" Content="Søg efter kunde-id" HorizontalAlignment="Left" Margin="82,79,0,0" VerticalAlignment="Top"/>
-        <Label Name="FornavnLbl" Content="Fornavn" HorizontalAlignment="Left" Margin="90,164,0,0" VerticalAlignment="Top"/>
-        <Label Name="AddressLbl" Content="Adresse" HorizontalAlignment="Left" Margin="91,240,0,0" VerticalAlignment="Top"/>
-        <TextBox  Name="KundeID" HorizontalAlignment="Left" Height="23" Margin="240,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox  Name="FornavnTxt" HorizontalAlignment="Left" Height="23" Margin="325,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox  Name="AdresseTxt" HorizontalAlignment="Left" Height="23" Margin="325,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="500" Width="450" Foreground="White" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" FocusManager.FocusedElement="{Binding ElementName=KundeID}">
+
+    <Grid Background="#FFFFFF">
+
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Pretty Hair - Ordresystem</TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
+                    <StackPanel Width="150">
+                        <Button Content="Tilbage til menu" Click="GoBack_Click"/>
+                        <Separator/>
+                        <Button Content="Afslut PrettyHair" Click="Shutdown_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+
+
+        </Grid>
+
+        <Button FontSize="24" IsDefault="True" Name="KundeSøgBTN" IsEnabled="false" Content="Søg efter kunde" HorizontalAlignment="Left" Margin="40,171,0,0" VerticalAlignment="Top" Width="380" Height="41" Click="KundeSøgBTN_Click"/>
+        <Label FontSize="24" Name="KundeIDlbl" Content="Søg efter kunde-id:" HorizontalAlignment="Left" Margin="40,103,0,0" VerticalAlignment="Top"/>
+        <Label  FontSize="20" Name="FornavnLbl"  Content="Fornavn:" HorizontalAlignment="Left" Margin="40,238,0,0" VerticalAlignment="Top" Foreground="DarkSlateGray"/>
+        <Label FontSize="20" Name="AddressLbl"  Content="Adresse:" HorizontalAlignment="Left" Margin="41,302,0,0" VerticalAlignment="Top" Foreground="DarkSlateGray"/>
+        <TextBox FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="KundeID" ToolTip="Skriv kunde-id her!" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="41" Margin="291,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129" TextChanged="KundeID_TextChanged" Foreground="DarkSlateGray" Background="#FFE8E8E8"/>
+        <TextBox FontSize="20"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="FornavnTxt" IsReadOnly="True" HorizontalAlignment="Left" Margin="220,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Foreground="Black" Background="#FFE8E8E8" Height="36"/>
+        <TextBox FontSize="20"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Name="AdresseTxt" IsReadOnly="True" HorizontalAlignment="left" Margin="220,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" Foreground="Black" Background="#FFE8E8E8" Height="36"/>
+        <Label FontSize="15" Content=""  x:Name="OrdreStart" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  HorizontalAlignment="Left" Margin="35,370,0,0" VerticalAlignment="Top" Foreground="DarkSlateGray" Width="385"/>
+        <Button  FontSize="24"  x:Name="OpretOrdreJa"  Content="Ja" HorizontalAlignment="Left" Margin="41,429,0,0" VerticalAlignment="Top" Width="150" Height="41" Click="KundeSøgBTN_Click"/>
+        <Button   FontSize="24"  x:Name="OpretOrdreNej" Content="Nej" HorizontalAlignment="Left" Margin="270,429,0,0" VerticalAlignment="Top" Width="150" Height="41" Click="KundeSøgBTN_Click"/>
 
     </Grid>
+
 </Window>

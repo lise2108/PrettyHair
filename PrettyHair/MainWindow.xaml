@@ -4,15 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrettyHair"
-        mc:Ignorable="d"
-        Title="Pretty Hair - Group 4 Edition" Height="400" Width="350">
-    <Grid Margin="0,0,5,0.5">
-        <Button Name="FindKunde" FontSize="20" Content="Find Kunde" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top" Width="320" Height="95" Click="FindKunde_Click"/>
-        <Button Name="OpretKunde" FontSize="20" Content="Opret Kunde" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="320" Height="90" Click="OpretKunde_Click"/>
-        <Button Name="OpretOrdre" Content="Opret Ordre" FontSize="20" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Width="320" Height="105" Click="OpretOrdre_Click"/>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="530" Width="400" Foreground="White" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen">
 
-
-
-
+    <Grid Background="White">
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF5C99D6">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock VerticalAlignment="Center" FontSize="16"/>
+                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
+                    <StackPanel Width="150">
+                        <Button Content="Afslut PrettyHair" Click="Shutdown_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Pretty Hair - Ordresystem</TextBlock>
+            <Button Name="OpretKunde" FontSize="20" Content="Opret Kunde" HorizontalAlignment="Left" Margin="50,100,0,-200" VerticalAlignment="Top" Width="300" Height="95" Click="OpretKunde_Click" Background="#FF2196F3"/>
+            <Button Name="FindKunde" FontSize="20" Content="Find Kunde" HorizontalAlignment="Left" Margin="50,250,0,-400" VerticalAlignment="Top" Width="300" Height="95" Click="FindKunde_Click" Background="#FF2196F3"/>
+            <Button Name="OpretOrdre" FontSize="20" Content="Opret Ordre" HorizontalAlignment="Left" Margin="50,400,0,-600" VerticalAlignment="Top" Width="300" Height="95" Click="OpretOrdre_Click" Background="#FF2196F3"/>
+        </Grid>
     </Grid>
 </Window>

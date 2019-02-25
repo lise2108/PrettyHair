@@ -35,11 +35,11 @@ namespace PrettyHair
 
         private void FindKunde_Click(object sender, RoutedEventArgs e)
         {
-
             FindKunde findKunde = new FindKunde();
             findKunde.Show();
             this.Close();
         }
+
 
         private void OpretOrdre_Click(object sender, RoutedEventArgs e)
         {
@@ -47,6 +47,11 @@ namespace PrettyHair
 
             opretOrdre.Show();
             this.Close();
+        }
+
+        private void Shutdown_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

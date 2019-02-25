@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PrettyHair
 {
@@ -21,25 +22,25 @@ namespace PrettyHair
                     con.Open();
                     SqlCommand cmd = new SqlCommand("AddCustomer", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     cmd.Parameters.Add(new SqlParameter("@Name", customer.Name));
                     cmd.Parameters.Add(new SqlParameter("@Address", customer.Address));
                     cmd.Parameters.Add(new SqlParameter("@Zip", customer.Zip));
                     cmd.Parameters.Add(new SqlParameter("@Town", customer.Town));
                     cmd.Parameters.Add(new SqlParameter("@Telephone", customer.Telephone));
-
                     cmd.ExecuteNonQuery();
                 }
+
                 catch (SqlException e)
                 {
                     throw e;
                 }
             }
-
-            
         }
+
         public string GetCustomer(int CustomerID)
         {
+            string name = "";
+            string address = "";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
@@ -49,23 +50,20 @@ namespace PrettyHair
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
                     SqlDataReader read = cmd.ExecuteReader();
-                    string name = "";
-                    string address = "";
+
                     while (read.Read())
                     {
                         name = read["Name"].ToString();
                         address = read["Address"].ToString();
                     }
-                    return name + ";" + address;
                 }
+
                 catch (SqlException e)
                 {
-                    throw e;
-
+                    MessageBox.Show(e.ToString());
                 }
+                return name + ";" + address;
             }
-
-
         }
     }
 }
