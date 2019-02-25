@@ -19,9 +19,17 @@ namespace PrettyHair
 	/// </summary>
 	public partial class FindKunde : Window
 	{
-		public FindKunde()
+        PrettyHair.Controller cont = new PrettyHair.Controller();
+        public FindKunde()
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void KundeSøgBTN_Click(object sender, RoutedEventArgs e)
+        {
+            string[] tmp = cont.GetCustomer(int.Parse(KundeID.Text)).Split(';');
+            FornavnTxt.Text = tmp[0];
+            AdresseTxt.Text = tmp[1];
+        }
+    }
 }

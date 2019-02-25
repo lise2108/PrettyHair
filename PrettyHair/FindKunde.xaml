@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="FindKunde" Height="450" Width="800">
     <Grid>
-        <Button Name="OpretOrdre" Content="Opret ordre" HorizontalAlignment="Left" Margin="325,79,0,0" VerticalAlignment="Top" Width="117" Height="34"/>
-        <Label Name="OrdreDato" Content="Ordre dato" HorizontalAlignment="Left" Margin="90,175,0,0" VerticalAlignment="Top"/>
-        <Label Name="Leveringsdato" Content="Leveringsdato" HorizontalAlignment="Left" Margin="90,258,0,0" VerticalAlignment="Top"/>
-        <Label Name="Picked" Content="Picked" HorizontalAlignment="Left" Margin="90,340,0,0" VerticalAlignment="Top"/>
-        <TextBox IsEnabled="False" Name="OrdreDatoText" HorizontalAlignment="Left" Height="23" Margin="325,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox IsEnabled="False" Name="LeveringsdatoText" HorizontalAlignment="Left" Height="23" Margin="325,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox IsEnabled="False" Name="PickedText" HorizontalAlignment="Left" Height="23" Margin="325,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Name="KundeSøgBTN" Content="Søg efter kunde" HorizontalAlignment="Left" Margin="590,71,0,0" VerticalAlignment="Top" Width="117" Height="34" Click="KundeSøgBTN_Click"/>
+        <Label Name="KundeIDlbl" Content="Søg efter kunde-id" HorizontalAlignment="Left" Margin="82,79,0,0" VerticalAlignment="Top"/>
+        <Label Name="FornavnLbl" Content="Fornavn" HorizontalAlignment="Left" Margin="90,164,0,0" VerticalAlignment="Top"/>
+        <Label Name="AddressLbl" Content="Adresse" HorizontalAlignment="Left" Margin="91,240,0,0" VerticalAlignment="Top"/>
+        <TextBox  Name="KundeID" HorizontalAlignment="Left" Height="23" Margin="240,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox  Name="FornavnTxt" HorizontalAlignment="Left" Height="23" Margin="325,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox  Name="AdresseTxt" HorizontalAlignment="Left" Height="23" Margin="325,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

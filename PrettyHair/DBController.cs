@@ -12,7 +12,6 @@ namespace PrettyHair
     {
         private static string connectionString = 
         "Server = ealSQL1.eal.local; Database = A_DB29_2018; User Id = A_STUDENT29; Password = A_OPENDB29;";
-        private bool spWorked;
         public void CreateCustomer(Customer customer)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -30,16 +29,43 @@ namespace PrettyHair
                     cmd.Parameters.Add(new SqlParameter("@Telephone", customer.Telephone));
 
                     cmd.ExecuteNonQuery();
-                    spWorked = true;
                 }
                 catch (SqlException e)
                 {
-                    spWorked = false;
-                    Console.WriteLine("Woopsi " + e.Message);
+                    throw e;
                 }
             }
 
             
+        }
+        public string GetCustomer(int CustomerID)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("GetCustomer", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
+                    SqlDataReader read = cmd.ExecuteReader();
+                    string name = "";
+                    string address = "";
+                    while (read.Read())
+                    {
+                        name = read["Name"].ToString();
+                        address = read["Address"].ToString();
+                    }
+                    return name + ";" + address;
+                }
+                catch (SqlException e)
+                {
+                    throw e;
+
+                }
+            }
+
+
         }
     }
 }
