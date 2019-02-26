@@ -20,33 +20,54 @@ namespace PrettyHair
     /// </summary>
     public partial class OpretKunde : Window
     {
-        private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
-        private static bool IsTextAllowed(string text)
-        {
-            return !_regex.IsMatch(text);
-        }
+    
         PrettyHair.Controller cont = new PrettyHair.Controller();
         public OpretKunde()
         {
             InitializeComponent();
         }
 
-        private void OpretKundeOK_Click(object sender, RoutedEventArgs e)
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
-            cont.CreateCustomer(NavnText.Text, AdresseText.Text, Convert.ToInt32(ZipText.Text), ByText.Text, TlfText.Text);
+            cont.CreateCustomer(nameText.Text, addressText.Text, Convert.ToInt32(zipText.Text), cityText.Text, telephoneText.Text);
         }
+
+        private void ShutdownButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
+
+
+        private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
+
+        private static bool IsTextAllowed(string text)
+        {
+            return !_regex.IsMatch(text);
+        }
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
 
         private void SetButton()
         {
-            OpretKundeOK.IsEnabled = (NavnText.Text != "" || NavnText.IsEnabled == false) && (AdresseText.Text != "" || AdresseText.IsEnabled == false) && (ZipText.Text != "" && ZipText.Text.Length == 4 || ZipText.IsEnabled == false) && (ByText.Text != "" || ByText.IsEnabled == false) && (TlfText.Text != "" || TlfText.IsEnabled == false) && TlfText.Text.Length == 8;
+            _createButton.IsEnabled = (nameText.Text != "" || nameText.IsEnabled == false) && (addressText.Text != "" || addressText.IsEnabled == false) && (zipText.Text != "" && zipText.Text.Length == 4 || zipText.IsEnabled == false) && (cityText.Text != "" || cityText.IsEnabled == false) && (telephoneText.Text != "" || telephoneText.IsEnabled == false) && telephoneText.Text.Length == 8;
         }
 
-        private void NavnText_TextChanged(object sender, TextChangedEventArgs e)
+        private void NameText_TextChanged(object sender, TextChangedEventArgs e)
         {
             SetButton();
         }
 
-        private void AdresseText_TextChanged(object sender, TextChangedEventArgs e)
+        private void AddressText_TextChanged(object sender, TextChangedEventArgs e)
         {
            SetButton();
         }
@@ -56,31 +77,15 @@ namespace PrettyHair
             SetButton();
         }
 
-        private void ByText_TextChanged(object sender, TextChangedEventArgs e)
+        private void CityText_TextChanged(object sender, TextChangedEventArgs e)
         {
             SetButton();
         }
 
-        private void TlfText_TextChanged(object sender, TextChangedEventArgs e)
+        private void TelephoneText_TextChanged(object sender, TextChangedEventArgs e)
         {
             SetButton();
         }
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
-        {
-            Regex regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
-        }
 
-        private void Shutdown_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-        private void GoBack_Click(object sender, RoutedEventArgs e)
-        {
-
-            MainWindow main = new MainWindow();
-            main.Show();
-            this.Close();
-        }
     }
 }

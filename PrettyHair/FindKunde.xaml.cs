@@ -21,54 +21,53 @@ namespace PrettyHair
 	public partial class FindKunde : Window
 	{
         PrettyHair.Controller cont = new PrettyHair.Controller();
+        public FindKunde()
+        {
+            InitializeComponent();
+        }
         private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
 
         private static bool IsTextAllowed(string text)
         {
             return !_regex.IsMatch(text);
         }
-        public FindKunde()
-		{
-			InitializeComponent();
-        }
-
-        private void KundeSøgBTN_Click(object sender, RoutedEventArgs e)
+        private void CustomerSearchButton_Click(object sender, RoutedEventArgs e)
         {
-            string[] tmp = cont.GetCustomer(int.Parse(KundeID.Text)).Split(';');
-            FornavnTxt.Text = tmp[0];
-            AdresseTxt.Text = tmp[1];
-            FornavnTxt.Visibility = Visibility.Visible;
-            AdresseTxt.Visibility = Visibility.Visible;
-            FornavnLbl.Visibility = Visibility.Visible;
-            AddressLbl.Visibility = Visibility.Visible;
-            OpretOrdreJa.Visibility = Visibility.Visible;
-            OpretOrdreNej.Visibility = Visibility.Visible;
-            OrdreStart.Content = "Vil du oprette en ny ordre til " + tmp[0] + "?";
+            string[] tmp = cont.GetCustomer(int.Parse(customeridText.Text)).Split(';');
+            firstnameText.Text = tmp[0];
+            addressText.Text = tmp[1];
+            OrderAskLabel.Content = "Vil du oprette en ny ordre til " + tmp[0] + "?";
+            EnableLabelAndButtons();
         }
 
-        private void KundeID_TextChanged(object sender, TextChangedEventArgs e)
+        private void Customerid_TextChanged(object sender, TextChangedEventArgs e)
         {
-            KundeSøgBTN.IsEnabled = (KundeID.Text != "");
+            CustomerSearchButton.IsEnabled = (customeridText.Text != "");
         }
-
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
-        private void Shutdown_Click(object sender, RoutedEventArgs e)
+        private void ShutdownButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-        private void GoBack_Click(object sender, RoutedEventArgs e)
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
-
             MainWindow main = new MainWindow();
             main.Show();
             this.Close();
         }
-
-
+        public void EnableLabelAndButtons()
+        {
+            firstnameText.Visibility = Visibility.Visible;
+            addressText.Visibility = Visibility.Visible;
+            FirstnameLabel.Visibility = Visibility.Visible;
+            AddressLabel.Visibility = Visibility.Visible;
+            _NoButton.Visibility = Visibility.Visible;
+            _NoButton.Visibility = Visibility.Visible;
+        }
     }
 }
 

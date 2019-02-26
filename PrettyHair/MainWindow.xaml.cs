@@ -25,31 +25,28 @@ namespace PrettyHair
             InitializeComponent();
         }
 
-		private void OpretKunde_Click(object sender, RoutedEventArgs e)
+		private void _CreateCustomer_Click(object sender, RoutedEventArgs e)
 		{
 			OpretKunde opretKunde = new OpretKunde();
-
 			opretKunde.Show();
             this.Close();
         }
 
-        private void FindKunde_Click(object sender, RoutedEventArgs e)
+        private void _FindCustomer_Click(object sender, RoutedEventArgs e)
         {
             FindKunde findKunde = new FindKunde();
             findKunde.Show();
             this.Close();
         }
 
-
-        private void OpretOrdre_Click(object sender, RoutedEventArgs e)
+        private void _MakeOrder_Click(object sender, RoutedEventArgs e)
         {
             OpretOrdre opretOrdre = new OpretOrdre();
-
             opretOrdre.Show();
             this.Close();
         }
 
-        private void Shutdown_Click(object sender, RoutedEventArgs e)
+        private void ShutdownButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
