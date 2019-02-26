@@ -36,7 +36,19 @@ namespace PrettyHair
             string[] tmp = cont.GetCustomer(int.Parse(customeridText.Text)).Split(';');
             firstnameText.Text = tmp[0];
             addressText.Text = tmp[1];
-            OrderAskLabel.Content = "Vil du oprette en ny ordre til " + tmp[0] + "?";
+            
+            if (String.IsNullOrEmpty(tmp[0]))
+            {
+                OrderAskLabel.Content = "Kunde findes ikke. Vil du oprette en ny kunde?";
+                OrderAskLabel.Foreground = Brushes.Red;
+            }
+            else if (tmp[0].Length > 0)
+            {
+                OrderAskLabel.Content = "Vil du oprette en ny ordre til " + tmp[0] + "?";
+                OrderAskLabel.Foreground = Brushes.Black;
+            }
+            
+
             EnableLabelAndButtons();
         }
 
@@ -65,8 +77,8 @@ namespace PrettyHair
             addressText.Visibility = Visibility.Visible;
             FirstnameLabel.Visibility = Visibility.Visible;
             AddressLabel.Visibility = Visibility.Visible;
-            _NoButton.Visibility = Visibility.Visible;
-            _NoButton.Visibility = Visibility.Visible;
+            _CreateOrder.Visibility = Visibility.Visible;
+            _SearchAgain.Visibility = Visibility.Visible;
         }
     }
 }

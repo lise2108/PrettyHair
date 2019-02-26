@@ -99,7 +99,7 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
-            FontSize="20"
+            FontSize="16"
             Foreground="Black"
             IsReadOnly="True" />
         <TextBox
@@ -112,7 +112,7 @@
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
-            FontSize="20"
+            FontSize="16"
             Foreground="Black"
             IsReadOnly="True" />
         <Label
@@ -127,22 +127,22 @@
             FontSize="15"
             Foreground="DarkSlateGray" />
         <Button
-            x:Name="_YesButton"
+            x:Name="_CreateOrder"
             Width="150"
             Height="41"
             Margin="41,429,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Ja"
-            FontSize="24" />
+            Content="Opret ordre"
+            FontSize="22" />
         <Button
-            x:Name="_NoButton"
+            x:Name="_SearchAgain"
             Width="150"
             Height="41"
             Margin="270,429,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Nej"
-            FontSize="24" />
+            Content="Søg igen"
+            FontSize="22" />
     </Grid>
 </Window>
