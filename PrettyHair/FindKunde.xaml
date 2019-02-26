@@ -13,7 +13,7 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
-    mc:Ignorable="d">
+    mc:Ignorable="d" MouseDown="Window_MouseDown">
     <Grid Background="#FFFFFF">
         <Grid
             Height="60"

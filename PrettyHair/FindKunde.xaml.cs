@@ -80,6 +80,12 @@ namespace PrettyHair
             _CreateOrder.Visibility = Visibility.Visible;
             _SearchAgain.Visibility = Visibility.Visible;
         }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
+        }
     }
 }
 
