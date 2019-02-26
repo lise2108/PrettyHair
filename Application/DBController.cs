@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Windows;
+using Domain;
 
 namespace PrettyHair
 {
@@ -60,7 +61,7 @@ namespace PrettyHair
 
                 catch (SqlException e)
                 {
-                    MessageBox.Show(e.ToString());
+                    Console.WriteLine("Fejl " + e.Message); ;
                 }
                 return name + ";" + address;
             }
