@@ -12,5 +12,6 @@ namespace Domain
         public DateTime DeliveryDate { get; set; }
         public int ProductTypeID { get; set; }
         public int Quantity { get; set; }
+        public bool Picked { get; set; }
     }
 }
