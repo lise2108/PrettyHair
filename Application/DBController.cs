@@ -12,7 +12,7 @@ namespace PrettyHair
 {
     public class DBController
     {
-        private static string connectionString = 
+        private static readonly string connectionString = 
         "Server = ealSQL1.eal.local; Database = A_DB29_2018; User Id = A_STUDENT29; Password = A_OPENDB29;";
         public void CreateCustomer(Customer customer)
         {
@@ -21,8 +21,10 @@ namespace PrettyHair
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("AddCustomer", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("AddCustomer", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     cmd.Parameters.Add(new SqlParameter("@Name", customer.Name));
                     cmd.Parameters.Add(new SqlParameter("@Address", customer.Address));
                     cmd.Parameters.Add(new SqlParameter("@Zip", customer.Zip));
@@ -44,8 +46,10 @@ namespace PrettyHair
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("AddOrder", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("AddOrder", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     cmd.Parameters.Add(new SqlParameter("@OrderDate", order.OrderDate));
                     cmd.Parameters.Add(new SqlParameter("@DeliveryDate", order.DeliveryDate));
                     cmd.Parameters.Add(new SqlParameter("@ProductTypeID", order.ProductTypeID));
@@ -70,8 +74,10 @@ namespace PrettyHair
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("GetCustomer", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    SqlCommand cmd = new SqlCommand("GetCustomer", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
                     cmd.Parameters.Add(new SqlParameter("@CustomerID", CustomerID));
                     SqlDataReader read = cmd.ExecuteReader();
 
