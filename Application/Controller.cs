@@ -16,11 +16,15 @@ namespace PrettyHair
             Customer customer = new Customer { Name = name, Address = address, Zip = zip, Town = town, Telephone = telephone };
             Dbcontroller.CreateCustomer(customer);
         }
+        public void CreateOrder(DateTime orderDate, DateTime deliveryDate, int productTypeID, int quantity)
+        {
+            Order order = new Order { OrderDate = orderDate, DeliveryDate = deliveryDate, ProductTypeID = productTypeID, Quantity = quantity };
+            Dbcontroller.CreateOrder(order);
+        }
 
         public string GetCustomer(int CustomerID)
         {
             return Dbcontroller.GetCustomer(CustomerID);
-           
         }
 
     }
