@@ -33,7 +33,30 @@ namespace PrettyHair
 
                 catch (SqlException e)
                 {
-                    throw e;
+                    Console.WriteLine("Fejl " + e.Message);
+                }
+            }
+        }
+        public void CreateOrder(Order order)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("AddOrder", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@OrderDate", order.OrderDate));
+                    cmd.Parameters.Add(new SqlParameter("@DeliveryDate", order.DeliveryDate));
+                    cmd.Parameters.Add(new SqlParameter("@ProductTypeID", order.ProductTypeID));
+                    cmd.Parameters.Add(new SqlParameter("@Quantity", order.Quantity));
+                    cmd.Parameters.Add(new SqlParameter("@Picked", order.Picked));
+                    cmd.ExecuteNonQuery();
+                }
+
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Fejl " + e.Message);
                 }
             }
         }
@@ -61,7 +84,7 @@ namespace PrettyHair
 
                 catch (SqlException e)
                 {
-                    Console.WriteLine("Fejl " + e.Message); ;
+                    Console.WriteLine("Fejl " + e.Message);
                 }
                 return name + ";" + address;
             }
