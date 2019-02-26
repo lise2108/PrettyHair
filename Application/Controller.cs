@@ -20,7 +20,6 @@ namespace PrettyHair
         public string GetCustomer(int CustomerID)
         {
             return Dbcontroller.GetCustomer(CustomerID);
-           
         }
 
     }

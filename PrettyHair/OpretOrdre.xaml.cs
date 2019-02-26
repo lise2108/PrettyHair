@@ -23,5 +23,15 @@ namespace PrettyHair
         {
             InitializeComponent();
         }
+        private void ShutdownButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
     }
 }
