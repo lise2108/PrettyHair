@@ -19,6 +19,7 @@ namespace UI
     /// </summary>
     public partial class OpretOrdre : Window
     {
+        Application.Controller cont = new Application.Controller();
         public OpretOrdre()
         {
             InitializeComponent();
@@ -39,5 +40,11 @@ namespace UI
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+
+        private void _CreateOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            cont.CreateOrder(DateTime.Now, DateTime.Now.AddDays(14), productIDText.Text, mængdeText.Text, kundeIDtxt.Text);
+        }
+        
     }
 }

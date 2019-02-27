@@ -46,33 +46,33 @@
             Margin="205,450,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Opret ordre" />
+            Content="Opret ordre" Click="_CreateOrderButton_Click" />
         <Label
             Name="OrderDateLabel"
-            Margin="90,175,0,0"
+            Margin="90,124,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Ordre dato"
             FontSize="15" />
         <Label
             Name="DeliverydateLabel"
-            Margin="90,258,0,0"
+            Margin="90,180,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Leveringsdato"
             FontSize="15" />
         <Label
-            Name="PickedLabel"
-            Margin="90,340,0,0"
+            Name="ProductTypeID"
+            Margin="90,229,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Picked"
+            Content="Produkt type ID"
             FontSize="15" />
         <TextBox
             Name="orderdateText"
             Width="120"
             Height="30"
-            Margin="325,175,0,0"
+            Margin="325,124,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
@@ -81,12 +81,12 @@
             FontSize="15"
             Foreground="Black"
             IsEnabled="False"
-            Text="TextBox" />
+            Text="TextBox" TextChanged="OrderdateText_TextChanged" />
         <TextBox
             Name="deliverydateText"
             Width="120"
             Height="30"
-            Margin="325,258,0,0"
+            Margin="325,180,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
@@ -96,11 +96,18 @@
             Foreground="Black"
             IsEnabled="False"
             Text="TextBox" />
+        <Label
+            x:Name="Mængde"
+            Margin="90,277,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Mængde"
+            FontSize="15" />
         <TextBox
-            Name="pickedText"
+            x:Name="mængdeText"
             Width="120"
             Height="30"
-            Margin="325,340,0,0"
+            Margin="325,277,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
@@ -109,6 +116,41 @@
             FontSize="15"
             Foreground="Black"
             IsEnabled="False"
-            Text="TextBox" />
+            Text="TextBox" TextChanged="Mængdetxt_TextChanged" />
+        <Label
+            x:Name="KundeID"
+            Margin="90,334,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="KundeID"
+            FontSize="15" />
+        <TextBox
+            x:Name="kundeIDtxt"
+            Width="120"
+            Height="30"
+            Margin="325,334,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            FontSize="15"
+            Foreground="Black"
+            IsEnabled="False"
+            Text="TextBox" TextChanged="Mængdetxt_TextChanged" />
+        <TextBox
+            x:Name="productIDText"
+            Width="120"
+            Height="30"
+            Margin="325,229,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            FontSize="15"
+            Foreground="Black"
+            IsEnabled="False"
+            Text="TextBox" TextChanged="Mængdetxt_TextChanged" />
     </Grid>
 </Window>
