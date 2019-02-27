@@ -43,7 +43,7 @@ namespace UI
 
         private void _CreateOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            cont.CreateOrder(DateTime.Now, DateTime.Now.AddDays(14), productIDText.Text, mængdeText.Text, kundeIDtxt.Text);
+            cont.CreateOrder(DateTime.Now, DateTime.Now.AddDays(14), productIDText.Text, mængdeText.Text, kundeIDtxt.Text, false);
         }
         
     }
