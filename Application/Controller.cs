@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain;
 
-namespace PrettyHair
+namespace Application
 {
     public class Controller
     {

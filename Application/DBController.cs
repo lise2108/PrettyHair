@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Domain;
 
-namespace PrettyHair
+namespace Application
 {
     public class DBController
     {
@@ -31,6 +31,7 @@ namespace PrettyHair
                     cmd.Parameters.Add(new SqlParameter("@Town", customer.Town));
                     cmd.Parameters.Add(new SqlParameter("@Telephone", customer.Telephone));
                     cmd.ExecuteNonQuery();
+                    
                 }
 
                 catch (SqlException e)

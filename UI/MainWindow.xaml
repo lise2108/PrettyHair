@@ -1,0 +1,74 @@
+﻿<Window
+    x:Class="UI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UI"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="400"
+    Height="530"
+    Foreground="White"
+    MouseDown="Window_MouseDown"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid Background="White">
+        <Grid
+            Height="60"
+            VerticalAlignment="Top"
+            Background="#FF5C99D6">
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <materialDesign:PopupBox
+                    Margin="10"
+                    PlacementMode="BottomAndAlignRightEdges"
+                    StaysOpen="False">
+                    <StackPanel Width="150">
+                        <Button Click="ShutdownButton_Click" Content="Afslut PrettyHair" />
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="22">
+                Pretty Hair - Ordresystem
+            </TextBlock>
+            <Button
+                Name="_CreateCustomer"
+                Width="300"
+                Height="95"
+                Margin="50,100,0,-200"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF2196F3"
+                Click="_CreateCustomer_Click"
+                Content="Opret Kunde"
+                FontSize="20" />
+            <Button
+                Name="_FindCustomer"
+                Width="300"
+                Height="95"
+                Margin="50,250,0,-400"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF2196F3"
+                Click="_FindCustomer_Click"
+                Content="Find Kunde"
+                FontSize="20" />
+            <Button
+                Name="_MakeOrder"
+                Width="300"
+                Height="95"
+                Margin="50,400,0,-600"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF2196F3"
+                Click="_MakeOrder_Click"
+                Content="Opret Ordre"
+                FontSize="20" />
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,153 @@
+﻿<Window
+    x:Class="UI.OpretKunde"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UI"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="400"
+    Height="450"
+    FocusManager.FocusedElement="{Binding ElementName=nameText}"
+    Foreground="White"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d" MouseDown="Window_MouseDown">
+    <Grid>
+        <Grid
+            Height="60"
+            VerticalAlignment="Top"
+            Background="#FF5C99D6">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="22">
+                Pretty Hair - Ordresystem
+            </TextBlock>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+
+                <materialDesign:PopupBox
+                    Margin="10"
+                    PlacementMode="BottomAndAlignRightEdges"
+                    StaysOpen="False">
+                    <StackPanel Width="150">
+                        <Button Click="GoBackButton_Click" Content="Tilbage til menu" />
+                        <Separator />
+                        <Button Click="ShutdownButton_Click" Content="Afslut PrettyHair" />
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </Grid>
+        <Label
+            Name="NameLabel"
+            Margin="47,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Navn:"
+            FontSize="15" />
+        <Label
+            Name="AddressLabel"
+            Margin="47,155,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Adresse:"
+            FontSize="15" />
+        <Label
+            Name="ZipLabel"
+            Margin="47,220,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Postnummer:"
+            FontSize="15" />
+        <Label
+            Name="CityLabel"
+            Margin="47,277,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="By:"
+            FontSize="15" />
+        <Label
+            Name="TelephoneLabel"
+            Margin="47,356,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Telefon:"
+            FontSize="15" />
+        <TextBox
+            Name="nameText"
+            Width="120"
+            Height="23"
+            Margin="213,89,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            Foreground="Black"
+            TextChanged="NameText_TextChanged" />
+        <TextBox
+            Name="addressText"
+            Width="120"
+            Height="23"
+            Margin="213,155,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            Foreground="Black"
+            TextChanged="AddressText_TextChanged" />
+        <TextBox
+            Name="zipText"
+            Width="120"
+            Height="23"
+            Margin="213,220,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            Foreground="Black"
+            MaxLength="4"
+            PreviewTextInput="NumberValidationTextBox"
+            TextChanged="ZipText_TextChanged" />
+        <TextBox
+            Name="cityText"
+            Width="120"
+            Height="23"
+            Margin="213,277,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            Foreground="Black"
+            TextChanged="CityText_TextChanged" />
+        <TextBox
+            Name="telephoneText"
+            Width="120"
+            Height="23"
+            Margin="213,356,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            Foreground="Black"
+            MaxLength="8"
+            PreviewTextInput="NumberValidationTextBox"
+            TextChanged="TelephoneText_TextChanged" />
+        <Button
+            Name="_createButton"
+            Width="286"
+            Margin="47,408,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Click="CreateButton_Click"
+            Content="Opret"
+            IsEnabled="false" />
+    </Grid>
+</Window>

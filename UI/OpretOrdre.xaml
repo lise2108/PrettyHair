@@ -1,0 +1,114 @@
+﻿<Window
+    x:Class="UI.OpretOrdre"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UI"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="600"
+    Height="530"
+    Foreground="White"
+    MouseDown="Window_MouseDown"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid Background="White">
+        <Grid
+            Height="60"
+            VerticalAlignment="Top"
+            Background="#FF5C99D6">
+
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <materialDesign:PopupBox
+                    Margin="10"
+                    PlacementMode="BottomAndAlignRightEdges"
+                    StaysOpen="False">
+                    <StackPanel Width="150">
+                        <Button Click="GoBackButton_Click" Content="Tilbage til menu" />
+                        <Separator />
+                        <Button Click="ShutdownButton_Click" Content="Afslut PrettyHair" />
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="22">
+                Pretty Hair - Ordresystem
+            </TextBlock>
+        </Grid>
+        <Button
+            Name="_CreateOrderButton"
+            Width="117"
+            Height="34"
+            Margin="205,450,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Opret ordre" />
+        <Label
+            Name="OrderDateLabel"
+            Margin="90,175,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Ordre dato"
+            FontSize="15" />
+        <Label
+            Name="DeliverydateLabel"
+            Margin="90,258,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Leveringsdato"
+            FontSize="15" />
+        <Label
+            Name="PickedLabel"
+            Margin="90,340,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Picked"
+            FontSize="15" />
+        <TextBox
+            Name="orderdateText"
+            Width="120"
+            Height="30"
+            Margin="325,175,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            FontSize="15"
+            Foreground="Black"
+            IsEnabled="False"
+            Text="TextBox" />
+        <TextBox
+            Name="deliverydateText"
+            Width="120"
+            Height="30"
+            Margin="325,258,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            FontSize="15"
+            Foreground="Black"
+            IsEnabled="False"
+            Text="TextBox" />
+        <TextBox
+            Name="pickedText"
+            Width="120"
+            Height="30"
+            Margin="325,340,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="#FFE8E8E8"
+            FontSize="15"
+            Foreground="Black"
+            IsEnabled="False"
+            Text="TextBox" />
+    </Grid>
+</Window>
