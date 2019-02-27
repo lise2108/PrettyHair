@@ -80,8 +80,7 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            IsEnabled="False"
-            Text="TextBox" TextChanged="OrderdateText_TextChanged" />
+            Text="TextBox"/>
         <TextBox
             Name="deliverydateText"
             Width="120"
@@ -94,7 +93,6 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            IsEnabled="False"
             Text="TextBox" />
         <Label
             x:Name="Mængde"
@@ -115,8 +113,7 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            IsEnabled="False"
-            Text="TextBox" TextChanged="Mængdetxt_TextChanged" />
+            Text="TextBox"/>
         <Label
             x:Name="KundeID"
             Margin="90,334,0,0"
@@ -136,8 +133,7 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            IsEnabled="False"
-            Text="TextBox" TextChanged="Mængdetxt_TextChanged" />
+            Text="TextBox"/>
         <TextBox
             x:Name="productIDText"
             Width="120"
@@ -150,7 +146,6 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            IsEnabled="False"
-            Text="TextBox" TextChanged="Mængdetxt_TextChanged" />
+            Text="TextBox"/>
     </Grid>
 </Window>

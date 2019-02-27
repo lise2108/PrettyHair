@@ -55,6 +55,7 @@ namespace Application
                     cmd.Parameters.Add(new SqlParameter("@DeliveryDate", order.DeliveryDate));
                     cmd.Parameters.Add(new SqlParameter("@ProductTypeID", order.ProductTypeID));
                     cmd.Parameters.Add(new SqlParameter("@Quantity", order.Quantity));
+                    cmd.Parameters.Add(new SqlParameter("@CustomerID", order.CustomerID));
                     cmd.Parameters.Add(new SqlParameter("@Picked", order.Picked));
                     cmd.ExecuteNonQuery();
                 }
