@@ -31,6 +31,7 @@ namespace UI
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
             cont.CreateCustomer(nameText.Text, addressText.Text, Convert.ToInt32(zipText.Text), cityText.Text, telephoneText.Text);
+            MessageBox.Show("Kunde oprettet! \n Vil du oprette en ordre?");
         }
 
         private void ShutdownButton_Click(object sender, RoutedEventArgs e)
