@@ -46,54 +46,15 @@
             Margin="205,450,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Opret ordre" Click="_CreateOrderButton_Click" />
-        <Label
-            Name="OrderDateLabel"
-            Margin="90,124,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Ordre dato"
-            FontSize="15" />
-        <Label
-            Name="DeliverydateLabel"
-            Margin="90,180,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Content="Leveringsdato"
-            FontSize="15" />
+            Click="_CreateOrderButton_Click"
+            Content="Opret ordre" />
         <Label
             Name="ProductTypeID"
             Margin="90,229,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Produkt type ID"
+            Content="Produkt"
             FontSize="15" />
-        <TextBox
-            Name="orderdateText"
-            Width="120"
-            Height="30"
-            Margin="325,124,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Background="#FFE8E8E8"
-            FontSize="15"
-            Foreground="Black"
-            Text="TextBox"/>
-        <TextBox
-            Name="deliverydateText"
-            Width="120"
-            Height="30"
-            Margin="325,180,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            VerticalContentAlignment="Center"
-            Background="#FFE8E8E8"
-            FontSize="15"
-            Foreground="Black"
-            Text="TextBox" />
         <Label
             x:Name="Mængde"
             Margin="90,277,0,0"
@@ -113,16 +74,16 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            Text="TextBox"/>
+            Text="TextBox" />
         <Label
-            x:Name="KundeID"
+            x:Name="Pris"
             Margin="90,334,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="KundeID"
+            Content="Pris"
             FontSize="15" />
         <TextBox
-            x:Name="kundeIDtxt"
+            x:Name="priceText"
             Width="120"
             Height="30"
             Margin="325,334,0,0"
@@ -133,7 +94,7 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            Text="TextBox"/>
+            Text="TextBox" />
         <TextBox
             x:Name="productIDText"
             Width="120"
@@ -146,6 +107,6 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            Text="TextBox"/>
+            Text="TextBox" />
     </Grid>
 </Window>

@@ -86,6 +86,14 @@ namespace UI
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+
+        private void _CreateOrder_Click(object sender, RoutedEventArgs e)
+        {
+            cont.CreateOrder(DateTime.Now, DateTime.Now.AddDays(14), int.Parse(customeridText.Text), false);
+            OpretOrdre opretordre = new OpretOrdre();
+            opretordre.Show();
+            this.Close();
+        }
     }
 }
 

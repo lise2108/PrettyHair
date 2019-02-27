@@ -134,7 +134,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Opret ordre"
-            FontSize="22" />
+            FontSize="22" Click="_CreateOrder_Click" />
         <Button
             x:Name="_SearchAgain"
             Width="150"

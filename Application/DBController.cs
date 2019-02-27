@@ -51,10 +51,9 @@ namespace Application
                     {
                         CommandType = CommandType.StoredProcedure
                     };
+
                     cmd.Parameters.Add(new SqlParameter("@OrderDate", order.OrderDate));
                     cmd.Parameters.Add(new SqlParameter("@DeliveryDate", order.DeliveryDate));
-                    cmd.Parameters.Add(new SqlParameter("@ProductTypeID", order.ProductTypeID));
-                    cmd.Parameters.Add(new SqlParameter("@Quantity", order.Quantity));
                     cmd.Parameters.Add(new SqlParameter("@CustomerID", order.CustomerID));
                     cmd.Parameters.Add(new SqlParameter("@Picked", order.Picked));
                     cmd.ExecuteNonQuery();
@@ -66,6 +65,32 @@ namespace Application
                 }
             }
         }
+
+        public void AddOrderLine(OrderLine orderLine)
+        {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("AddOrderLine", con)
+                        {
+                            CommandType = CommandType.StoredProcedure
+                        };
+
+                        cmd.Parameters.Add(new SqlParameter("@OrderID", orderLine.OrderID));
+                        cmd.Parameters.Add(new SqlParameter("@ProductID", orderLine.ProductID));
+                        cmd.Parameters.Add(new SqlParameter("@Quantity", orderLine.Quantity));
+                        cmd.Parameters.Add(new SqlParameter("@Price", orderLine.Price));
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    catch (SqlException e)
+                    {
+                        Console.WriteLine("Fejl " + e.Message);
+                    }
+                }
+            }
 
         public string GetCustomer(int CustomerID)
         {
