@@ -123,9 +123,9 @@ namespace Application
                 return name + ";" + address;
             }
         }
-        public string GetOrderID()
+        public int GetOrderID()
         {
-            string orderidX = "";
+            int orderidX = 0;
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
@@ -140,7 +140,7 @@ namespace Application
 
                     while (read.Read())
                     {
-                        orderidX = read["OrderID"].ToString();
+                        orderidX = read.GetInt32(0);
                     }
                 }
 

@@ -27,7 +27,7 @@ namespace Application
             return Dbcontroller.GetCustomer(CustomerID);
         }
 
-        public string GetOrderID()
+        public int GetOrderID()
         {
             return Dbcontroller.GetOrderID();
         }
