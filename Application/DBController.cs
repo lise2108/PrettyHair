@@ -123,5 +123,33 @@ namespace Application
                 return name + ";" + address;
             }
         }
+        public string GetOrderID()
+        {
+            string orderidX = "";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("GetOrderID", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        orderidX = read["OrderID"].ToString();
+                    }
+                }
+
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Fejl " + e.Message);
+                }
+                return orderidX;
+            }
+        }
     }
 }

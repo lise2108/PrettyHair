@@ -43,8 +43,8 @@ namespace UI
 
         private void _CreateOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            int nul = 0;
-            cont.AddOrderLine(0,(Convert.ToInt32(productIDText.Text)), (Convert.ToInt32(mængdeText.Text)), (Convert.ToInt32(priceText.Text)));
+            int OrderID = cont.GetOrderID();
+            cont.AddOrderLine(OrderID,(Convert.ToInt32(productIDText.Text)), (Convert.ToInt32(mængdeText.Text)), (Convert.ToInt32(priceText.Text)));
         }
         
     }
