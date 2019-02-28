@@ -74,7 +74,7 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            Text="TextBox" />
+            Text="" />
         <Label
             x:Name="Pris"
             Margin="90,334,0,0"
@@ -94,9 +94,9 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            Text="TextBox" />
+            Text="" />
         <TextBox
-            x:Name="productIDText"
+            x:Name="productText"
             Width="120"
             Height="30"
             Margin="325,229,0,0"
@@ -107,6 +107,6 @@
             Background="#FFE8E8E8"
             FontSize="15"
             Foreground="Black"
-            Text="TextBox" />
+            Text="" />
     </Grid>
 </Window>

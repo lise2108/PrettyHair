@@ -44,8 +44,26 @@ namespace UI
         private void _CreateOrderButton_Click(object sender, RoutedEventArgs e)
         {
             int OrderID = cont.GetOrderID();
-            cont.AddOrderLine(OrderID,(Convert.ToInt32(productIDText.Text)), (Convert.ToInt32(mængdeText.Text)), (Convert.ToInt32(priceText.Text)));
+            cont.AddOrderLine(OrderID,(Convert.ToInt32(productText.Text)), (Convert.ToInt32(mængdeText.Text)), (Convert.ToInt32(priceText.Text)));
         }
-        
+
+        private void SetButton()
+        {
+            _CreateOrderButton.IsEnabled = (productText.Text != String.Empty || productText.IsEnabled == false) && (mængdeText.Text != String.Empty || mængdeText.IsEnabled == false) && (priceText.Text != String.Empty || priceText.IsEnabled == false);
+        }
+        private void ProductText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetButton();
+        }
+
+        private void MængdeText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetButton();
+        }
+
+        private void PriceText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SetButton();
+        }
     }
 }
