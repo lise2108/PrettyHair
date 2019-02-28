@@ -26,8 +26,7 @@ namespace Application
         {
             return Dbcontroller.GetCustomer(CustomerID);
         }
-
-        public string GetOrderID(int OrderID)
+        
 
         public void AddOrderLine(int orderID, int productID, int quantity, double price)
         {
