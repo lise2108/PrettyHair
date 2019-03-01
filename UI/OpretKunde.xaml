@@ -7,13 +7,14 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="400"
-    Height="450"
+    Height="480"
     FocusManager.FocusedElement="{Binding ElementName=nameText}"
     Foreground="White"
+    MouseDown="Window_MouseDown"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
-    mc:Ignorable="d" MouseDown="Window_MouseDown">
+    mc:Ignorable="d">
     <Grid>
         <Grid
             Height="60"
@@ -45,109 +46,146 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Navn:"
-            FontSize="15" />
+            FontSize="20" />
         <Label
             Name="AddressLabel"
             Margin="47,155,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Adresse:"
-            FontSize="15" />
+            FontSize="20" />
         <Label
             Name="ZipLabel"
             Margin="47,220,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Postnummer:"
-            FontSize="15" />
+            FontSize="20" />
         <Label
             Name="CityLabel"
             Margin="47,277,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="By:"
-            FontSize="15" />
+            FontSize="20" />
         <Label
             Name="TelephoneLabel"
-            Margin="47,356,0,0"
+            Margin="47,343,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Telefon:"
-            FontSize="15" />
+            FontSize="20" />
         <TextBox
             Name="nameText"
-            Width="120"
-            Height="23"
+            Width="152"
+            Height="37"
             Margin="213,89,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
+            FontSize="20"
             Foreground="Black"
             TextChanged="NameText_TextChanged" />
         <TextBox
             Name="addressText"
-            Width="120"
-            Height="23"
+            Width="152"
+            Height="36"
             Margin="213,155,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
+            FontSize="20"
             Foreground="Black"
             TextChanged="AddressText_TextChanged" />
         <TextBox
             Name="zipText"
-            Width="120"
-            Height="23"
+            Width="152"
+            Height="37"
             Margin="213,220,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
+            FontSize="20"
             Foreground="Black"
             MaxLength="4"
             PreviewTextInput="NumberValidationTextBox"
             TextChanged="ZipText_TextChanged" />
         <TextBox
             Name="cityText"
-            Width="120"
-            Height="23"
+            Width="152"
+            Height="37"
             Margin="213,277,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
+            FontSize="20"
             Foreground="Black"
             TextChanged="CityText_TextChanged" />
         <TextBox
             Name="telephoneText"
-            Width="120"
-            Height="23"
-            Margin="213,356,0,0"
+            Width="152"
+            Height="37"
+            Margin="213,343,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
+            FontSize="20"
             Foreground="Black"
             MaxLength="8"
             PreviewTextInput="NumberValidationTextBox"
             TextChanged="TelephoneText_TextChanged" />
         <Button
             Name="_createButton"
-            Width="286"
-            Margin="47,408,0,0"
+            Width="318"
+            Height="45"
+            Margin="47,415,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Click="CreateButton_Click"
             Content="Opret"
+            FontSize="20"
             IsEnabled="false" />
+        <Button
+            x:Name="OpretOrder"
+            Width="148"
+            Height="95"
+            Margin="47,251,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="OpretOrderLabel_click"
+            Content="Opret ordre"
+            Visibility="Hidden" />
+        <Button
+            x:Name="OpretKundeLabel"
+            Width="152"
+            Height="95"
+            Margin="213,251,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="OpretKundeLabel_click"
+            Content="Opret ny kunde"
+            Visibility="Hidden" />
+        <Label
+            x:Name="OrderAskLabel"
+            Width="490"
+            Height="117"
+            Margin="25,140,-115,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Vil du oprette en ordre til den pågældende kunde?"
+            FontSize="16"
+            Visibility="Hidden" />
     </Grid>
 </Window>

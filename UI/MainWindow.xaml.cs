@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Application;
 
 namespace UI
 {
@@ -40,16 +27,9 @@ namespace UI
             this.Close();
         }
 
-        private void _MakeOrder_Click(object sender, RoutedEventArgs e)
-        {
-            OpretOrdre opretOrdre = new OpretOrdre();
-            opretOrdre.Show();
-            this.Close();
-        }
-
         private void ShutdownButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)

@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Domain;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
-using System.Windows;
-using Domain;
+using System.Linq;
 
 namespace Application
 {
     public class DBController
     {
-        private static readonly string connectionString = 
+        private static readonly string connectionString =
         "Server = ealSQL1.eal.local; Database = A_DB29_2018; User Id = A_STUDENT29; Password = A_OPENDB29;";
         public void CreateCustomer(Customer customer)
         {
@@ -31,7 +28,7 @@ namespace Application
                     cmd.Parameters.Add(new SqlParameter("@Town", customer.Town));
                     cmd.Parameters.Add(new SqlParameter("@Telephone", customer.Telephone));
                     cmd.ExecuteNonQuery();
-                    
+
                 }
 
                 catch (SqlException e)
@@ -56,7 +53,7 @@ namespace Application
                     cmd.Parameters.Add(new SqlParameter("@DeliveryDate", order.DeliveryDate));
                     cmd.Parameters.Add(new SqlParameter("@CustomerID", order.CustomerID));
                     cmd.Parameters.Add(new SqlParameter("@Picked", order.Picked));
-                    
+
                     cmd.ExecuteNonQuery();
                 }
 
@@ -69,29 +66,29 @@ namespace Application
 
         public void AddOrderLine(OrderLine orderLine)
         {
-                using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
                 {
-                    try
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("AddOrderLine", con)
                     {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand("AddOrderLine", con)
-                        {
-                            CommandType = CommandType.StoredProcedure
-                        };
+                        CommandType = CommandType.StoredProcedure
+                    };
 
-                        cmd.Parameters.Add(new SqlParameter("@OrderID", orderLine.OrderID));
-                        cmd.Parameters.Add(new SqlParameter("@ProductID", orderLine.ProductID));
-                        cmd.Parameters.Add(new SqlParameter("@Quantity", orderLine.Quantity));
-                        cmd.Parameters.Add(new SqlParameter("@Price", orderLine.Price));
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.Parameters.Add(new SqlParameter("@OrderID", orderLine.OrderID));
+                    cmd.Parameters.Add(new SqlParameter("@ProductID", orderLine.ProductID));
+                    cmd.Parameters.Add(new SqlParameter("@Quantity", orderLine.Quantity));
+                    cmd.Parameters.Add(new SqlParameter("@Price", orderLine.Price));
+                    cmd.ExecuteNonQuery();
+                }
 
-                    catch (SqlException e)
-                    {
-                        Console.WriteLine("Fejl " + e.Message);
-                    }
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Fejl " + e.Message);
                 }
             }
+        }
 
         public string GetCustomer(int CustomerID)
         {
@@ -151,5 +148,135 @@ namespace Application
                 return orderidX;
             }
         }
+        public int GetCustomerID()
+        {
+            int customeridX = 0;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("GetCustomerID", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        customeridX = read.GetInt32(0);
+                    }
+                }
+
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Fejl " + e.Message);
+                }
+                return customeridX;
+            }
+        }
+
+        public string[] GetPrice()
+        {
+            List<double> temppName = new List<double>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM A_DB29_2018.dbo.K_Product", con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        temppName.Add(reader.GetDouble(3));
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+                double[] pPrice = temppName.ToArray();
+
+                string[] result = pPrice.Select(x => x.ToString()).ToArray();
+                return result;
+            }
+        }
+
+        public string GetDescription(int descriptionID)
+        {
+            string description = "";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("GetDescription", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.Add(new SqlParameter("@DescriptionID", descriptionID));
+                    SqlDataReader read = cmd.ExecuteReader();
+
+                    while (read.Read())
+                    {
+                        description = read["Description"].ToString();
+                    }
+                }
+
+                catch (SqlException e)
+                {
+                    Console.WriteLine("Fejl " + e.Message);
+                }
+                return description;
+            }
+        }
+            public string[] GetProducts()
+            {
+                List<string> temppName = new List<string>();
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM A_DB29_2018.dbo.K_Product", con);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            temppName.Add(reader.GetString(1));
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+                    string[] pName = temppName.ToArray();
+                    return pName;
+                }
+            }
+
+            public int[] GetQuantity()
+            {
+                List<int> temppName = new List<int>();
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("SELECT * FROM A_DB29_2018.dbo.K_Product", con);
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            temppName.Add(reader.GetInt32(4));
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+                    int[] pQuantity = temppName.ToArray();
+                    return pQuantity;
+                }
+            }
+        }
     }
-}

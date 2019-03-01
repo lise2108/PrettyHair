@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
+﻿using Domain;
+using System;
 
 namespace Application
 {
@@ -27,16 +23,40 @@ namespace Application
             return Dbcontroller.GetCustomer(CustomerID);
         }
 
+        public string GetDescription(int DescriptionID)
+        {
+            return Dbcontroller.GetDescription(DescriptionID);
+        }
+
         public int GetOrderID()
         {
             return Dbcontroller.GetOrderID();
         }
         
-
+        public int GetCustomerID()
+        {
+            return Dbcontroller.GetCustomerID();
+        }
         public void AddOrderLine(int orderID, int productID, int quantity, double price)
         {
             OrderLine orderLine = new OrderLine { OrderID = orderID, ProductID = productID, Quantity = quantity, Price = price};
             Dbcontroller.AddOrderLine(orderLine);
         }
+
+        public string[] GetProducts()
+        {
+            return Dbcontroller.GetProducts();
+        }
+
+        public string[] GetPrice()
+        {
+            return Dbcontroller.GetPrice();
+        }
+
+        public int[] GetQuantity()
+        {
+            return Dbcontroller.GetQuantity();
+        }
+        
     }
 }

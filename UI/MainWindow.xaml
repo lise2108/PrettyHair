@@ -39,8 +39,8 @@
             <Button
                 Name="_CreateCustomer"
                 Width="300"
-                Height="95"
-                Margin="50,100,0,-200"
+                Height="175"
+                Margin="50,110,0,-225"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Background="#FF2196F3"
@@ -50,24 +50,13 @@
             <Button
                 Name="_FindCustomer"
                 Width="300"
-                Height="95"
-                Margin="50,250,0,-400"
+                Height="175"
+                Margin="50,330,0,-445"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Background="#FF2196F3"
                 Click="_FindCustomer_Click"
                 Content="Find Kunde"
-                FontSize="20" />
-            <Button
-                Name="_MakeOrder"
-                Width="300"
-                Height="95"
-                Margin="50,400,0,-600"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Background="#FF2196F3"
-                Click="_MakeOrder_Click"
-                Content="Opret Ordre"
                 FontSize="20" />
         </Grid>
     </Grid>

@@ -6,8 +6,8 @@
     xmlns:local="clr-namespace:UI"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Width="600"
-    Height="530"
+    Width="800"
+    Height="330"
     Foreground="White"
     MouseDown="Window_MouseDown"
     ResizeMode="NoResize"
@@ -40,73 +40,95 @@
             </TextBlock>
         </Grid>
         <Button
-            Name="_CreateOrderButton"
-            Width="117"
-            Height="34"
-            Margin="205,450,0,0"
+            Name="_AddToOrder"
+            Width="154"
+            Height="44"
+            Margin="601,122,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="_CreateOrderButton_Click"
-            Content="Opret ordre" />
+            Click="_AddToOrder_Click"
+            Content="Tilføj produkt"
+            FontSize="20" />
         <Label
             Name="ProductTypeID"
-            Margin="90,229,0,0"
+            Margin="30,86,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Produkt"
-            FontSize="15" />
+            FontSize="20" />
         <Label
-            x:Name="Mængde"
-            Margin="90,277,0,0"
+            x:Name="AmountLabel"
+            Margin="215,86,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Mængde"
-            FontSize="15" />
+            Content="Antal"
+            FontSize="20" />
         <TextBox
-            x:Name="mængdeText"
-            Width="120"
-            Height="30"
-            Margin="325,277,0,0"
+            x:Name="amountText"
+            Width="150"
+            Height="45"
+            Margin="215,122,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
-            FontSize="15"
+            FontSize="20"
             Foreground="Black"
-            Text="TextBox" />
+            TextChanged="AmountText_TextChanged" />
         <Label
-            x:Name="Pris"
-            Margin="90,334,0,0"
+            x:Name="PriceLabel"
+            Margin="410,86,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Content="Pris"
-            FontSize="15" />
+            Content="Pris (DKK)"
+            FontSize="20"
+            RenderTransformOrigin="0.58,1.035" />
         <TextBox
             x:Name="priceText"
-            Width="120"
-            Height="30"
-            Margin="325,334,0,0"
+            Width="150"
+            Height="45"
+            Margin="410,122,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
-            FontSize="15"
-            Foreground="Black"
-            Text="TextBox" />
-        <TextBox
-            x:Name="productIDText"
-            Width="120"
-            Height="30"
-            Margin="325,229,0,0"
+            FontSize="20"
+            Foreground="Black" />
+        <Button
+            x:Name="_OrderDone"
+            Width="154"
+            Height="44"
+            Margin="601,230,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="Green"
+            Click="_OrderDone_Click"
+            Content="Afslut ordre"
+            FontSize="20"
+            IsEnabled="False" />
+        <ComboBox
+            x:Name="ProductIDCombo"
+            Width="150"
+            Height="44"
+            Margin="30,123,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             HorizontalContentAlignment="Center"
             VerticalContentAlignment="Center"
             Background="#FFE8E8E8"
-            FontSize="15"
+            FontSize="20"
             Foreground="Black"
-            Text="TextBox" />
+            SelectionChanged="ProductIDCombo_SelectionChanged" />
+        <Label
+            x:Name="DescriptionLabel"
+            Width="545"
+            Height="105"
+            FontSize="20"
+            Margin="30,200,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label" />
     </Grid>
 </Window>

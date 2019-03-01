@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace UI
 {
@@ -20,9 +10,12 @@ namespace UI
     public partial class OpretOrdre : Window
     {
         Application.Controller cont = new Application.Controller();
+        int counter;
+        int count;
         public OpretOrdre()
         {
             InitializeComponent();
+            ProductIDCombo.ItemsSource = cont.GetProducts();
         }
         private void ShutdownButton_Click(object sender, RoutedEventArgs e)
         {
@@ -41,11 +34,85 @@ namespace UI
                 this.DragMove();
         }
 
-        private void _CreateOrderButton_Click(object sender, RoutedEventArgs e)
+        private void _AddToOrder_Click(object sender, RoutedEventArgs e)
         {
-            int OrderID = cont.GetOrderID();
-            cont.AddOrderLine(OrderID,(Convert.ToInt32(productIDText.Text)), (Convert.ToInt32(mængdeText.Text)), (Convert.ToInt32(priceText.Text)));
+            cont.AddOrderLine(cont.GetOrderID(), count, int.Parse(amountText.Text), double.Parse(priceText.Text));
+            _OrderDone.IsEnabled = true;
+            counter++;
         }
-        
+
+        private void _OrderDone_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Ordren er blevet oprettet!");
+            MainWindow main = new MainWindow();
+            main.Show();
+            this.Close();
+        }
+
+        private void ProductIDCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            count = ProductIDCombo.SelectedIndex;
+
+            string[] price = cont.GetPrice();
+            int[] quantity = cont.GetQuantity();
+            AmountLabel.Content = "Antal (" + quantity[count] + ") på lager.";
+            priceText.Text = price[count].ToString();
+            
+            if (amountText.Text == "")
+            {
+                priceText.Clear();
+            }
+            else
+            {
+                bool success = double.TryParse(amountText.Text, out double number);
+                if (success)
+                {
+                    string[] prices = cont.GetPrice();
+                    string price4 = prices[count];
+                    double number2 = double.Parse(price4);
+                    priceText.Text = (number * number2).ToString();;
+                }
+                else
+                {
+                    amountText.Text = "";
+                }
+            }
+
+            DescriptionLabel.Content = "Beskrivelse:\n" + cont.GetDescription(count+1);
+        }
+
+
+        private void AmountText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int[] quantity = cont.GetQuantity();
+            bool successs = double.TryParse(amountText.Text, out double number);
+            if (successs)
+            {
+                if (number < quantity[count] && counter > 0)
+                {
+                    _OrderDone.IsEnabled = true;
+                }
+                else
+                    _OrderDone.IsEnabled = false;
+            }
+            else
+            {
+                amountText.Text = "";
+            }
+                bool success = double.TryParse(amountText.Text, out double number1);
+                if (success)
+                {
+                    int count = ProductIDCombo.SelectedIndex;
+                    string[] prices = cont.GetPrice();
+                    string price = prices[count];
+                    double number2 = double.Parse(price);
+                    priceText.Text = (number1 * number2).ToString();
+                }
+                else
+                {
+                    amountText.Text = "";
+                }
+            }
+        }
     }
-}
+    
